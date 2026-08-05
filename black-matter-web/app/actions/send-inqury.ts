@@ -16,7 +16,7 @@ export async function sendInquiry(formData: FormData) {
 
   try {
     const data = await resend.emails.send({
-      from: 'BM Engineering <onboarding@resend.dev>',
+      from: 'BM Engineering <info@blackmatterengineering.com>',
       to: ['info@blackmatterengineering.com'],
       subject: `[${category}] Upit od: ${name}`,
       replyTo: email,
