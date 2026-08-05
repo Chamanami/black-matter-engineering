@@ -540,7 +540,7 @@ export default function App() {
 
                 <div className="text-sm text-neutral-400 font-medium space-y-3 pt-4 tracking-wide">
                   <p><span className="text-neutral-600 uppercase mr-2">LOCATION</span> Novi Sad, Serbia</p>
-                  <p><span className="text-neutral-600 uppercase mr-2">EMAIL</span> info@blackmatterengineering</p>
+                  <p><span className="text-neutral-600 uppercase mr-2">EMAIL</span> info@blackmatterengineering.com</p>
                   <p><span className="text-neutral-600 uppercase mr-2">RESPONSE TIME</span> &lt; 24 Hours</p>
                 </div>
               </div>
