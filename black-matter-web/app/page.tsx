@@ -14,6 +14,7 @@ import {
   Menu,
   X
 } from 'lucide-react';
+import { sendInquiry } from '@/app/actions/send-inqury';
 
 type Tab = 'home' | 'projects' | 'products' | 'support';
 
@@ -31,6 +32,26 @@ export default function App() {
     { id: 'products', label: 'Ready-made Products' },
     { id: 'support', label: 'Support' },
   ];
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{ success?: boolean; message?: string } | null>(null);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    const formData = new FormData(event.currentTarget);
+    const result = await sendInquiry(formData);
+
+    setLoading(false);
+    if (result.success) {
+      setStatus({ success: true, message: 'Upit je uspešno poslat!' });
+      event.currentTarget.reset();
+    } else {
+      setStatus({ success: false, message: result.error || 'Došlo je do greške.' });
+    }
+  }
 
   return (
     <div className="bg-[#050505] text-[#E5E5E5] min-h-screen font-sans selection:bg-white selection:text-black antialiased flex flex-col justify-between">
@@ -272,7 +293,7 @@ export default function App() {
                       </li>
                       <li className="pt-4 flex justify-between">
                         <span className="font-semibold text-neutral-600 uppercase">ENCODERS</span>
-                        <span className="text-right text-neutral-200">CTS Industrial Rotary</span>
+                        <span className="text-right text-neutral-200">Incremental and position</span>
                       </li>
                       <li className="pt-4 flex justify-between">
                         <span className="font-semibold text-neutral-600 uppercase">GRIPS</span>
@@ -549,14 +570,14 @@ export default function App() {
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Initiate Transmission</h3>
                 <p className="text-sm text-neutral-400 font-light tracking-wide mb-8">Fill in your specifications or technical question below.</p>
 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-neutral-500 mb-2 uppercase tracking-wide">Name / Organization</label>
                       <input 
                         type="text" 
                         className="w-full bg-[#050505] border border-neutral-800 px-4 py-3 text-base text-white focus:outline-none focus:border-white transition-colors"
-                        placeholder="e.g. Marko Marković"
+                        placeholder="e.g. John Smith"
                       />
                     </div>
                     <div>
@@ -591,10 +612,17 @@ export default function App() {
                   <button 
                     type="submit" 
                     className="w-full bg-white text-black py-4 text-sm font-bold uppercase tracking-widest hover:bg-neutral-200 transition-colors mt-4"
+                    disabled={loading}
                   >
-                    Send Inquiry
+                    {loading ? 'Sending...' : 'Send'}
                   </button>
                 </form>
+
+                {status && (
+                   <p className={status.success ? 'text-green-600' : 'text-red-600'}>
+                   {status.message}
+                      </p>
+                    )}
               </div>
             </div>
           </div>
