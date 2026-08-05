@@ -576,6 +576,8 @@ export default function App() {
                       <label className="block text-sm font-semibold text-neutral-500 mb-2 uppercase tracking-wide">Name / Organization</label>
                       <input 
                         type="text" 
+                        name="name"
+                        required
                         className="w-full bg-[#050505] border border-neutral-800 px-4 py-3 text-base text-white focus:outline-none focus:border-white transition-colors"
                         placeholder="e.g. John Smith"
                       />
@@ -584,6 +586,8 @@ export default function App() {
                       <label className="block text-sm font-semibold text-neutral-500 mb-2 uppercase tracking-wide">Email Address</label>
                       <input 
                         type="email" 
+                        name="email"
+                        required
                         className="w-full bg-[#050505] border border-neutral-800 px-4 py-3 text-base text-white focus:outline-none focus:border-white transition-colors"
                         placeholder="name@domain.com"
                       />
@@ -592,7 +596,9 @@ export default function App() {
 
                   <div>
                     <label className="block text-sm font-semibold text-neutral-500 mb-2 uppercase tracking-wide">Category</label>
-                    <select className="w-full bg-[#050505] border border-neutral-800 px-4 py-3 text-base text-white focus:outline-none focus:border-white transition-colors">
+                    <select className="w-full bg-[#050505] border border-neutral-800 px-4 py-3 text-base text-white focus:outline-none focus:border-white transition-colors"
+                    name="category"
+                    >
                       <option>Ready-made Product Order Inquiry</option>
                       <option>BM-499P Technical Inquiry</option>
                       <option>Custom Bespoke Commission</option>
@@ -603,6 +609,8 @@ export default function App() {
                   <div>
                     <label className="block text-sm font-semibold text-neutral-500 mb-2 uppercase tracking-wide">Message / Technical Notes</label>
                     <textarea 
+                      name="message"
+                      required
                       rows={6} 
                       className="w-full bg-[#050505] border border-neutral-800 px-4 py-3 text-base text-white focus:outline-none focus:border-white transition-colors resize-none"
                       placeholder="Specify hardware model, setup details, or custom request..."
