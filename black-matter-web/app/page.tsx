@@ -421,7 +421,11 @@ export default function App() {
 >
   <div>
     <div className="w-full h-52 bg-neutral-950 border border-neutral-900 mb-6 flex flex-col items-center justify-center text-sm font-semibold text-neutral-600 uppercase tracking-widest">
-      <span>[ BM-P500 ]</span>
+      <img
+          src="/products/BM-P500/1.jpg"
+          alt="BM-P500"
+          className="w-full h-full object-cover"
+        />
     </div>
 
     <div className="flex justify-between items-start mb-3">
