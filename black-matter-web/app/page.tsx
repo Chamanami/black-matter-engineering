@@ -377,6 +377,88 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                  onClick={() => window.location.href = '/products/toro-gt3'}
+                  className="border border-neutral-800 bg-[#080808] p-6 flex flex-col justify-between cursor-pointer hover:border-neutral-600 transition-all"
+                >
+                  <div>
+                    <div className="w-full h-52 bg-neutral-950 border border-neutral-900 mb-6 overflow-hidden">
+                      <img
+                        src="/products/toro-gt3/1.jpg"
+                        alt="Toro GT3"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-xl font-medium tracking-tight text-white pr-2">
+                        Toro GT3
+                      </h3>
+
+                      <span className="text-xs font-semibold tracking-widest border border-neutral-700 text-neutral-300 px-2 py-1 mt-1">
+                        AVAILABLE
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-neutral-400 font-light tracking-wide leading-relaxed mt-2 mb-6">
+                      A purpose-built GT3 steering wheel designed for precision, ergonomics,
+                      and direct-drive simulation.
+                    </p>
+                  </div>
+
+                  <div className="pt-6 border-t border-neutral-900 flex justify-between items-center">
+                    <span className="text-xl font-medium text-white">€XXX.00</span>
+
+                    <span className="text-sm font-semibold border border-neutral-700 px-4 py-2 text-white uppercase tracking-wider">
+                      View
+                    </span>
+                  </div>
+                </div>
+
+               <div
+  onClick={() => window.location.href = '/products/BM-P500'}
+  className="border border-neutral-800 bg-[#080808] p-6 flex flex-col justify-between cursor-pointer hover:border-neutral-600 transition-all"
+>
+  <div>
+    <div className="w-full h-52 bg-neutral-950 border border-neutral-900 mb-6 flex flex-col items-center justify-center text-sm font-semibold text-neutral-600 uppercase tracking-widest">
+      <span>[ BM-P500 ]</span>
+    </div>
+
+    <div className="flex justify-between items-start mb-3">
+      <h3 className="text-xl font-medium tracking-tight text-white pr-2">
+        BM-P500 Sim Racing Wheel
+      </h3>
+
+      <span className="text-xs font-semibold tracking-widest border border-neutral-700 text-neutral-300 px-2 py-1 mt-1">
+        PROTOTYPE
+      </span>
+    </div>
+
+    <p className="text-sm text-neutral-400 font-light tracking-wide leading-relaxed mt-2 mb-6">
+      Motorsport-inspired steering wheel developed as a flagship Black Matter Engineering prototype.
+    </p>
+
+    <ul className="text-sm text-neutral-300 space-y-2 mb-8 font-light tracking-wide">
+      <li><span className="font-semibold text-neutral-600 mr-2">MASS</span> ~1450g</li>
+      <li><span className="font-semibold text-neutral-600 mr-2">DIAMETER</span> 286mm</li>
+      <li><span className="font-semibold text-neutral-600 mr-2">STATUS</span> Prototype V1.0</li>
+    </ul>
+  </div>
+
+  <div className="pt-6 border-t border-neutral-900 flex justify-between items-center">
+    <span className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
+      Custom Project
+    </span>
+
+    <button
+      onClick={() => setActiveTab('support')}
+      className="text-sm font-semibold border border-neutral-700 px-4 py-2 text-white hover:bg-white hover:text-black transition-all uppercase tracking-wider"
+    >
+      Inquire
+    </button>
+  </div>
+</div>
+              
               <div className="border border-neutral-800 bg-[#080808] p-6 flex flex-col justify-between">
                 <div>
                   <div className="w-full h-52 bg-neutral-950 border border-neutral-900 mb-6 flex flex-col items-center justify-center text-sm font-semibold text-neutral-600 uppercase tracking-widest">
