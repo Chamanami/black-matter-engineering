@@ -422,7 +422,7 @@ export default function App() {
   <div>
     <div className="w-full h-52 bg-neutral-950 border border-neutral-900 mb-6 flex flex-col items-center justify-center text-sm font-semibold text-neutral-600 uppercase tracking-widest">
       <img
-          src="/products/BM-P500/1.jpg"
+          src="/products/BM-P500/1.png"
           alt="BM-P500"
           className="w-full h-full object-cover"
         />
